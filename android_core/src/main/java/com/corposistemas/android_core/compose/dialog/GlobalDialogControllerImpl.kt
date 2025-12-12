@@ -7,8 +7,8 @@ class GlobalDialogControllerImpl : GlobalDialogController {
 
     data class GlobalDialogState(
         val visible: Boolean = false,
-        val title: String = "TITLE",
-        val message: String = "MESSAGE",
+        val title: String = "",
+        val message: String = "",
         val type: DialogType = DialogType.INFO,
         val onConfirm: () -> Unit = {},
         val onDismiss: () -> Unit = {}
@@ -25,6 +25,7 @@ class GlobalDialogControllerImpl : GlobalDialogController {
     ) {
         state.value = GlobalDialogState(
             visible = true,
+            title = title,
             message = message,
             type = type,
             onConfirm = onConfirm,
