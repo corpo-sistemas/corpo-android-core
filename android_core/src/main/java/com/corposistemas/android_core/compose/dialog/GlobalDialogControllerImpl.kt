@@ -7,7 +7,7 @@ interface GlobalDialogControllerImpl {
     fun show(
         type: DialogType = DialogType.INFO,
         message: String = "",
-        title: String?,
+        title: String? = null,
         onConfirm: () -> Unit = {},
         onDismiss: () -> Unit = {}
     )
