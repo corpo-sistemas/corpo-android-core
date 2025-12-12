@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.okhttp)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -71,7 +72,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.corpo-sistemas"
                 artifactId = "android-core"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }
