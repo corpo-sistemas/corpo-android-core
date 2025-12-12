@@ -28,8 +28,14 @@ class GlobalDialogControllerImpl : GlobalDialogController {
             title = title,
             message = message,
             type = type,
-            onConfirm = onConfirm,
-            onDismiss = onDismiss
+            onConfirm = {
+                onConfirm()
+                hide()
+            },
+            onDismiss = {
+                onDismiss()
+                hide()
+            }
         )
     }
 

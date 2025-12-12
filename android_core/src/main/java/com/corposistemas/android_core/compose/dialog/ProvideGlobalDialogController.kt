@@ -23,7 +23,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.corposistemas.android_core.enums.DialogType
 
@@ -32,6 +31,50 @@ val LocalDialogController = staticCompositionLocalOf<GlobalDialogController> {
     error("DialogController not provided")
 }
 
+/**
+ * Provides a globally accessible dialog controller instance to the current composition and
+ * attaches a dialog host that renders dialogs triggered through that controller.
+ *
+ * This function installs a [GlobalDialogControllerImpl] into a [CompositionLocalProvider]
+ * using [LocalDialogController]. Any composable within the subtree can obtain the controller
+ * through `LocalDialogController.current` and trigger dialogs by invoking
+ * [GlobalDialogController.show].
+ *
+ * The dialog host ([GlobalDialogHost]) is included automatically and is rendered above the
+ * provided [content], ensuring that dialogs appear regardless of the current UI screen or
+ * navigation state.
+ *
+ * Typical usage:
+ *
+ * ```kotlin
+ * setContent {
+ *     ProvideGlobalDialogController {
+ *         MyAppScreen()
+ *     }
+ * }
+ * ```
+ *
+ * Inside any composable within this scope:
+ *
+ * ```kotlin
+ * val dialog = LocalDialogController.current
+ *
+ * Button(onClick = {
+ *     dialog.show(
+ *         title = "Confirm Action",
+ *         message = "Are you sure you want to continue?",
+ *         onConfirm = { /* handle confirmation */ },
+ *         onDismiss = { /* handle dismissal */ }
+ *     )
+ * }) {
+ *     Text("Open Dialog")
+ * }
+ * ```
+ *
+ * @param controller The dialog controller instance to expose to the composition.
+ *                   Defaults to a remembered instance of [GlobalDialogControllerImpl].
+ * @param content The UI hierarchy that should have access to the global dialog controller.
+ */
 @Composable
 fun ProvideGlobalDialogController(
     controller: GlobalDialogControllerImpl = remember { GlobalDialogControllerImpl() },
