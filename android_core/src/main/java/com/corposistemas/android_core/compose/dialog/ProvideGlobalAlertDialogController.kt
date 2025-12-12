@@ -27,28 +27,19 @@ import androidx.compose.ui.unit.dp
 import com.corposistemas.android_core.enums.DialogType
 
 
-val LocalDialogController = staticCompositionLocalOf<GlobalDialogController> {
+val LocalAlertDialogController = staticCompositionLocalOf<GlobalAlertDialogController> {
     error("DialogController not provided")
 }
 
 /**
- * Provides a globally accessible dialog controller instance to the current composition and
+ * Provides a globally accessible AlertDialog controller to the current composition and
  * attaches a dialog host that renders dialogs triggered through that controller.
- *
- * This function installs a [GlobalDialogControllerImpl] into a [CompositionLocalProvider]
- * using [LocalDialogController]. Any composable within the subtree can obtain the controller
- * through `LocalDialogController.current` and trigger dialogs by invoking
- * [GlobalDialogController.show].
- *
- * The dialog host ([GlobalDialogHost]) is included automatically and is rendered above the
- * provided [content], ensuring that dialogs appear regardless of the current UI screen or
- * navigation state.
  *
  * Typical usage:
  *
  * ```kotlin
  * setContent {
- *     ProvideGlobalDialogController {
+ *     ProvideGlobalAlertDialogController {
  *         MyAppScreen()
  *     }
  * }
@@ -57,7 +48,7 @@ val LocalDialogController = staticCompositionLocalOf<GlobalDialogController> {
  * Inside any composable within this scope:
  *
  * ```kotlin
- * val dialog = LocalDialogController.current
+ * val dialog = LocalAlertDialogController.current
  *
  * Button(onClick = {
  *     dialog.show(
@@ -70,26 +61,22 @@ val LocalDialogController = staticCompositionLocalOf<GlobalDialogController> {
  *     Text("Open Dialog")
  * }
  * ```
- *
- * @param controller The dialog controller instance to expose to the composition.
- *                   Defaults to a remembered instance of [GlobalDialogControllerImpl].
- * @param content The UI hierarchy that should have access to the global dialog controller.
  */
 @Composable
-fun ProvideGlobalDialogController(
-    controller: GlobalDialogControllerImpl = remember { GlobalDialogControllerImpl() },
+fun ProvideGlobalAlertDialogController(
+    controller: GlobalAlertDialogControllerImpl = remember { GlobalAlertDialogControllerImpl() },
     content: @Composable () -> Unit
 ) {
-    CompositionLocalProvider(LocalDialogController provides controller) {
+    CompositionLocalProvider(LocalAlertDialogController provides controller) {
         Box {
             content()
-            GlobalDialogHost(controller = controller)
+            GlobalAlertDialogHost(controller = controller)
         }
     }
 }
 
 @Composable
-private fun GlobalDialogHost(controller: GlobalDialogControllerImpl) {
+private fun GlobalAlertDialogHost(controller: GlobalAlertDialogControllerImpl) {
     val state by controller.state.collectAsState()
     if (!state.visible) return
 
@@ -126,10 +113,5 @@ private fun GlobalDialogHost(controller: GlobalDialogControllerImpl) {
                 Text("OK")
             }
         },
-        dismissButton = {
-            TextButton(onClick = state.onDismiss) {
-                Text("Cancelar")
-            }
-        }
     )
 }
