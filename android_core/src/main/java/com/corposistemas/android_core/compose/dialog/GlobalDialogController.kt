@@ -17,9 +17,9 @@ class GlobalDialogController : GlobalDialogControllerImpl {
     val state = MutableStateFlow(GlobalDialogState())
 
     override fun show(
+        type: DialogType,
         title: String,
         message: String,
-        type: DialogType,
         onConfirm: () -> Unit,
         onDismiss: () -> Unit
     ) {

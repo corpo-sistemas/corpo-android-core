@@ -5,9 +5,9 @@ import com.corposistemas.android_core.enums.DialogType
 interface GlobalDialogControllerImpl {
 
     fun show(
-        title: String,
-        message: String,
         type: DialogType = DialogType.INFO,
+        title: String = "",
+        message: String = "",
         onConfirm: () -> Unit = {},
         onDismiss: () -> Unit = {}
     )
