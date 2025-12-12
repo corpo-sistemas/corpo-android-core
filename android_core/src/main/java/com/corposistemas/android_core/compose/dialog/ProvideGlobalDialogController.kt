@@ -60,7 +60,6 @@ private fun GlobalDialogHost(controller: GlobalDialogControllerImpl) {
     AlertDialog(
         onDismissRequest = state.onDismiss,
         title = {
-            Text(text = state.title)
             Column(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,

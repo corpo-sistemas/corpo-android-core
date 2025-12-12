@@ -3,7 +3,7 @@ package com.corposistemas.android_core.compose.dialog
 import com.corposistemas.android_core.enums.DialogType
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class GlobalDialogControllerImpl : GlobalDialogController{
+class GlobalDialogControllerImpl : GlobalDialogController {
 
     data class GlobalDialogState(
         val visible: Boolean = false,
@@ -28,10 +28,7 @@ class GlobalDialogControllerImpl : GlobalDialogController{
             message = message,
             type = type,
             onConfirm = onConfirm,
-            onDismiss = {
-                hide()
-                onDismiss()
-            }
+            onDismiss = onDismiss
         )
     }
 
