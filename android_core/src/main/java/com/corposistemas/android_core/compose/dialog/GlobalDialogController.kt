@@ -7,8 +7,8 @@ class GlobalDialogController : GlobalDialogControllerImpl {
 
     data class GlobalDialogState(
         val visible: Boolean = false,
-        val title: String = "",
         val message: String = "",
+        val title: String = "",
         val type: DialogType = DialogType.INFO,
         val onConfirm: () -> Unit = {},
         val onDismiss: () -> Unit = {}
@@ -18,14 +18,14 @@ class GlobalDialogController : GlobalDialogControllerImpl {
 
     override fun show(
         type: DialogType,
-        title: String,
         message: String,
+        title: String?,
         onConfirm: () -> Unit,
         onDismiss: () -> Unit
     ) {
         state.value = GlobalDialogState(
             visible = true,
-            title = title,
+            title = title ?: type.value,
             message = message,
             type = type,
             onConfirm = {
