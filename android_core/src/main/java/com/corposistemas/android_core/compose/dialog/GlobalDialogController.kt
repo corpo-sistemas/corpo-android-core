@@ -3,7 +3,7 @@ package com.corposistemas.android_core.compose.dialog
 import com.corposistemas.android_core.enums.DialogType
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class GlobalAlertDialogControllerImpl : GlobalAlertDialogController {
+class GlobalDialogController : GlobalDialogControllerImpl {
 
     data class GlobalDialogState(
         val visible: Boolean = false,

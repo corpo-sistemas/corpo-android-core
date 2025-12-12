@@ -4,5 +4,8 @@ enum class DialogType {
     INFO,
     SUCCESS,
     WARNING,
-    ERROR
+    ERROR,
+    CONFIRM,
+    LOADING,
+    // TODO: PROMPT
 }
