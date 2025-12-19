@@ -50,8 +50,8 @@ android {
 }
 
 dependencies {
+    // ui libs
     implementation(libs.androidx.compose.material.icons.extended)
-    implementation(libs.okhttp)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -59,6 +59,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    // new libs
+    implementation(libs.okhttp)
+    implementation(libs.icu4j)
+    // testing
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
@@ -72,7 +76,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.corpo-sistemas"
                 artifactId = "android-core"
-                version = "1.0.6"
+                version = "1.1.0"
             }
         }
     }
