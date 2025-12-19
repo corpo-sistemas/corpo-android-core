@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.helpers.printer.formats
+package com.corposistemas.android.core.helpers.printer.formats
 
 class PrintFormatBuilder(private val maxCharactersPerLine: Int) {
 

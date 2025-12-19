@@ -1,9 +1,10 @@
-package com.corposistemas.android_core.helpers.printer.interfaces
+package com.corposistemas.android.core.helpers.printer.interfaces
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothManager
 import android.content.Context
+import com.corposistemas.android.core.helpers.converters.StrTransformer.normalized
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

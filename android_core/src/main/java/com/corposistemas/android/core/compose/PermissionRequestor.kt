@@ -1,4 +1,5 @@
-package com.corposistemas.android_core.compose
+package com.corposistemas.android.core.compose
+
 import android.app.Activity
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -21,13 +22,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.corposistemas.android_core.enums.PermissionState
-import com.corposistemas.android_core.helpers.permissions.PermissionsHelper
+import com.corposistemas.android.core.enums.PermissionState
+import com.corposistemas.android.core.helpers.permissions.PermissionsHelper
 
 @Composable
 fun PermissionRequestor(content: @Composable () -> Unit) {
     val ctx = LocalContext.current
-    var state by remember { mutableStateOf(PermissionState.UNKNOWN) }
+    var state by remember { mutableStateOf(_root_ide_package_.com.corposistemas.android.core.enums.PermissionState.UNKNOWN) }
 
     val multiplePermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),

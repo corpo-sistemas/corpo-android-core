@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.helpers.http
+package com.corposistemas.android.core.helpers.http
 
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody

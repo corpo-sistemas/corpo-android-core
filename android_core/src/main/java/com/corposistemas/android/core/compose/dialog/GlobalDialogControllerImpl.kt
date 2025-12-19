@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.compose.dialog
+package com.corposistemas.android.core.compose.dialog
 
 import com.corposistemas.android_core.enums.DialogType
 

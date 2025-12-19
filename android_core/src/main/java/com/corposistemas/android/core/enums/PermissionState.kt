@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.enums
+package com.corposistemas.android.core.enums
 
 enum class PermissionState {
     UNKNOWN,

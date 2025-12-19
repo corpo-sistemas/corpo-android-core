@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.helpers.converters
+package com.corposistemas.android.core.helpers.converters
 
 import java.math.BigDecimal
 import java.math.RoundingMode

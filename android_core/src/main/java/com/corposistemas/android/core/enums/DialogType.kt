@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.enums
+package com.corposistemas.android.core.enums
 
 enum class DialogType(val value: String) {
     INFO("Información"),

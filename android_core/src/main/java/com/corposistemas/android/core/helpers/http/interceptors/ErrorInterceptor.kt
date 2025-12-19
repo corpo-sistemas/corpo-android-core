@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.helpers.http.interceptors
+package com.corposistemas.android.core.helpers.http.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response

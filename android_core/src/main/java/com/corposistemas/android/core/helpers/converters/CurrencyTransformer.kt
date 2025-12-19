@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.helpers.converters
+package com.corposistemas.android.core.helpers.converters
 
 import com.ibm.icu.text.RuleBasedNumberFormat
 import java.math.BigDecimal

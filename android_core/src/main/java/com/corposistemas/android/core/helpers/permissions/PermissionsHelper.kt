@@ -1,4 +1,4 @@
-package com.corposistemas.android_core.helpers.permissions
+package com.corposistemas.android.core.helpers.permissions
 
 import android.Manifest
 import android.content.Context
