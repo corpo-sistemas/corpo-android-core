@@ -76,7 +76,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.corpo-sistemas"
                 artifactId = "android-core"
-                version = "1.1.0"
+                version = "1.1.2"
             }
         }
     }

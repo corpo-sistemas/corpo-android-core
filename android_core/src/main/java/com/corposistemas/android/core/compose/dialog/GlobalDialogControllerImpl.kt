@@ -1,6 +1,7 @@
 package com.corposistemas.android.core.compose.dialog
 
-import com.corposistemas.android_core.enums.DialogType
+import com.corposistemas.android.core.enums.DialogType
+
 
 interface GlobalDialogControllerImpl {
 

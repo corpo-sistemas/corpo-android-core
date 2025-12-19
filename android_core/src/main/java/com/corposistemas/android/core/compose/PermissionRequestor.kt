@@ -28,7 +28,7 @@ import com.corposistemas.android.core.helpers.permissions.PermissionsHelper
 @Composable
 fun PermissionRequestor(content: @Composable () -> Unit) {
     val ctx = LocalContext.current
-    var state by remember { mutableStateOf(_root_ide_package_.com.corposistemas.android.core.enums.PermissionState.UNKNOWN) }
+    var state by remember { mutableStateOf(PermissionState.UNKNOWN) }
 
     val multiplePermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),

@@ -29,7 +29,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.corposistemas.android_core.enums.DialogType
+import com.corposistemas.android.core.enums.DialogType
 
 
 val LocalDialogContext = staticCompositionLocalOf<GlobalDialogControllerImpl> {
